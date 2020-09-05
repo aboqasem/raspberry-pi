@@ -20,6 +20,5 @@ uint32_t mask(uint8_t pin) {
  * @return mask of pin1 and pin2 using left logical shifting and OR gate
  */
 uint32_t mask_multi(uint8_t pin1, uint8_t pin2) {
-  uint32_t mask = (1U << pin1) | (1U << pin2);
-  return mask;
+  return ((1U << pin1) | (1U << pin2));
 }
