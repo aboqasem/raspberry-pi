@@ -16,7 +16,7 @@ int main() {
   // both PINs low
   uint32_t pn_low = 0;
 
-  for (int i = 0; i < 50; ++i) {
+  for (int i = 0; i < 10; ++i) {
     bcm2835_gpio_write_mask(pn_high, pn_mask);
     bcm2835_delay(50);
     bcm2835_gpio_write_mask(pn_low, pn_mask);
