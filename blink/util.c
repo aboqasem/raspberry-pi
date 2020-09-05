@@ -7,7 +7,7 @@
 /**
  * masks one given pin using left logical shifting
  * @param pin
- * @return mask of pin1
+ * @return mask of pin
  */
 uint32_t mask(uint8_t pin) {
   return (1U << pin);
