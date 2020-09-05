@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <stdint.h>
+#include <bcm2835.h>
 
 #define PIN07 RPI_BPLUS_GPIO_J8_07
 #define PIN16 RPI_BPLUS_GPIO_J8_16

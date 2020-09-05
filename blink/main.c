@@ -1,4 +1,3 @@
-#include <bcm2835.h>
 #include "util.h"
 
 int main() {
