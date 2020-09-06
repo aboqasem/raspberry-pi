@@ -29,7 +29,6 @@
 .idea/
 cmake*
 CMake*
-blink-sysfs/
 
 # OS generated files #
 ######################
