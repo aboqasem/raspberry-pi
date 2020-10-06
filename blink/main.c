@@ -1,32 +1,20 @@
-#include "util.h"
+#include <wiringPi.h>
 
-int main() {
-  // counter
-  int i;
-  // both PINs mask
-  uint32_t pin_mask = mask_multi(PIN07, PIN16);
-  // both PINs high
-  uint32_t pin_high = mask_multi(PIN07, PIN16);
-  // both PINs low
-  uint32_t pin_low = 0;
+#define PIN_LED 4
 
-  // initialise the library
-  if (!bcm2835_init())
-    return 1;
-
-  // set function of PIN07 to output
-  bcm2835_gpio_fsel(PIN07, BCM2835_GPIO_FSEL_OUTP);
-  // set function of PIN16 to output
-  bcm2835_gpio_fsel(PIN16, BCM2835_GPIO_FSEL_OUTP);
-
-  // loop
-  for (i = 0; i < 50; ++i) {
-    bcm2835_gpio_write_mask(pin_high, pin_mask);
-    bcm2835_delay(50);
-    bcm2835_gpio_write_mask(pin_low, pin_mask);
-    bcm2835_delay(50);
+int main () {
+  // setup pin numbering to broadcom's
+  wiringPiSetupGpio();
+  // set pin PIN_LED to output
+  pinMode(PIN_LED, OUTPUT);
+  
+  // loop forever
+  for (;;) {
+    digitalWrite(PIN_LED, HIGH);
+    delay(50);
+    digitalWrite(PIN_LED, LOW);
+    delay(50);
   }
-
-  // close the library
-  return !bcm2835_close();
+  
+  return 0;
 }
